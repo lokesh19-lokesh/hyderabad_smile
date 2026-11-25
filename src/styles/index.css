@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    color: #10243E;
+  }
+  
+  h1, h2, h3, .font-serif {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+}
+
+/* Custom styling for luxury dental healthcare aesthetic */
+.hero-gradient {
+  background: radial-gradient(circle at 80% 20%, rgba(22, 120, 165, 0.25) 0%, rgba(7, 59, 92, 0.95) 50%, #032C47 100%);
+}
+
+.card-luxury {
+  background: #FFFFFF;
+  border: 1px solid rgba(238, 219, 200, 0.6);
+  box-shadow: 0 10px 30px -5px rgba(7, 59, 92, 0.06);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-luxury:hover {
+  transform: translateY(-4px);
+  border-color: #F36B13;
+  box-shadow: 0 20px 40px -10px rgba(7, 59, 92, 0.12), 0 0 15px rgba(243, 107, 19, 0.15);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #F36B13 0%, #FF8A24 50%, #E85B08 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navy-gradient {
+  background: linear-gradient(180deg, #073B5C 0%, #032C47 100%);
+}
+
+.btn-orange-gradient {
+  background: linear-gradient(135deg, #FF8A24 0%, #F36B13 50%, #E85B08 100%);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-orange-gradient:hover {
+  background: linear-gradient(135deg, #FFA048 0%, #FF761B 50%, #F36B13 100%);
+  box-shadow: 0 8px 24px rgba(243, 107, 19, 0.35);
+  transform: translateY(-2px);
+}
