@@ -76,7 +76,7 @@ export default function App() {
         <Header onOpenBooking={() => handleOpenBooking()} />
 
         {/* Main Content Area */}
-        <main className="flex-grow">
+        <main className="flex-grow pb-16 sm:pb-0">
           <Routes>
             {/* 1. HOMEPAGE */}
             <Route path="/" element={<Home onOpenBooking={() => handleOpenBooking()} />} />

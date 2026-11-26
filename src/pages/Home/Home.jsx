@@ -61,23 +61,23 @@ export default function Home({ onOpenBooking }) {
       {/* =========================================================================
           1. HERO SECTION (Deep Navy, Elegant Typography, High-End Healthcare Vibe)
       ========================================================================== */}
-      <section className="relative hero-gradient text-white pt-8 pb-20 sm:pt-16 sm:pb-28 lg:pb-32 overflow-hidden border-b border-navy-light/40">
+      <section className="relative hero-gradient text-white pt-6 sm:pt-14 pb-14 sm:pb-24 lg:pb-28 overflow-hidden border-b border-navy-light/40">
         {/* Soft decorative background glows */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-dental-blue/20 rounded-full blur-3xl pointer-events-none"></div>
         <div className="absolute bottom-0 left-10 w-80 h-80 bg-orange/15 rounded-full blur-3xl pointer-events-none"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Left Column: Headline & Value Proposition */}
             <div className="lg:col-span-7 text-center lg:text-left">
-              {/* Trust Pill */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-orange text-xs font-semibold tracking-wide mb-6 backdrop-blur-md">
-                <ShieldCheck className="w-4 h-4 text-orange" />
-                <span>First ISO 9001:2008 Certified Dental Hospital in Hyderabad</span>
+              {/* Trust Pill with High Contrast & Readability */}
+              <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-orange/20 border border-orange/40 text-white text-[11px] sm:text-xs font-semibold tracking-wide mb-4 sm:mb-6 shadow-sm">
+                <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-orange shrink-0" />
+                <span className="leading-tight">First ISO 9001:2008 Certified Dental Hospital in Hyderabad</span>
               </div>
 
               {/* Main Headline */}
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif font-bold text-white tracking-tight leading-[1.15]">
+              <h1 className="text-[26px] xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white tracking-tight leading-[1.2]">
                 Expert Dental Care for a <br className="hidden sm:inline" />
                 <span className="italic font-normal text-orange underline decoration-orange/40 decoration-wavy decoration-1">
                   Confident Smile
@@ -85,32 +85,32 @@ export default function Home({ onOpenBooking }) {
               </h1>
 
               {/* Supporting Text */}
-              <p className="mt-5 text-base sm:text-lg text-white/80 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
+              <p className="mt-3.5 sm:mt-5 text-sm sm:text-base lg:text-lg text-white/85 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
                 World-class treatments, cutting-edge 3D technology, and experienced MDS dental surgeons — all under one roof across Jubilee Hills, Madhapur & Punjagutta.
               </p>
 
               {/* Hero CTAs */}
-              <div className="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+              <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 sm:gap-4 max-w-md sm:max-w-none mx-auto lg:mx-0">
                 <button
                   type="button"
                   onClick={onOpenBooking}
-                  className="w-full sm:w-auto px-8 py-4 btn-orange-gradient rounded-full font-bold text-sm tracking-wide shadow-premium hover:shadow-glow transition-all duration-300 hover:scale-105 active:scale-95 flex items-center justify-center gap-2 cursor-pointer"
+                  className="w-full sm:w-auto px-8 py-3.5 sm:py-4 btn-orange-gradient rounded-full font-bold text-sm tracking-wide shadow-premium hover:shadow-glow transition-all duration-300 hover:scale-105 active:scale-95 flex items-center justify-center gap-2 cursor-pointer"
                 >
-                  <Calendar className="w-4 h-4" />
+                  <Calendar className="w-4 h-4 shrink-0" />
                   <span>Book Appointment</span>
                 </button>
 
                 <a
                   href={`tel:${siteData.phoneClean}`}
-                  className="w-full sm:w-auto px-7 py-4 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold text-sm transition-all duration-300 flex items-center justify-center gap-2"
+                  className="w-full sm:w-auto px-7 py-3.5 sm:py-4 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold text-sm transition-all duration-300 flex items-center justify-center gap-2"
                 >
-                  <Phone className="w-4 h-4 text-orange" />
+                  <Phone className="w-4 h-4 text-orange shrink-0" />
                   <span>Call {siteData.phone}</span>
                 </a>
               </div>
 
               {/* Quick Trust Highlights below CTA */}
-              <div className="mt-10 pt-8 border-t border-white/10 grid grid-cols-3 gap-4 text-center lg:text-left">
+              <div className="mt-7 sm:mt-10 pt-5 sm:pt-8 border-t border-white/15 grid grid-cols-3 gap-2 sm:gap-4 text-center lg:text-left">
                 <div>
                   <div className="text-xl sm:text-2xl font-serif font-bold text-white">20+</div>
                   <div className="text-[11px] sm:text-xs text-white/70">Years of Care</div>
@@ -127,8 +127,8 @@ export default function Home({ onOpenBooking }) {
             </div>
 
             {/* Right Column: Hero Visual Showcase */}
-            <div className="lg:col-span-5 relative">
-              <div className="relative mx-auto max-w-md lg:max-w-none">
+            <div className="lg:col-span-5 relative mt-8 sm:mt-12 lg:mt-0">
+              <div className="relative mx-auto max-w-sm sm:max-w-md lg:max-w-none">
                 {/* Main Hero Clinic/Patient Image */}
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-white/20 bg-navy-light/40 aspect-[4/5]">
                   <img
@@ -136,12 +136,23 @@ export default function Home({ onOpenBooking }) {
                     alt="Hyderabad Smiles Modern Hospital Suite & Patient Care"
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/80 via-transparent to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/85 via-transparent to-transparent"></div>
                   
+                  {/* Floating Rating Badge (Inside container on mobile, perfectly positioned) */}
+                  <div className="absolute top-3 right-3 sm:top-4 sm:right-4 bg-white/95 backdrop-blur-md text-navy py-1.5 px-3 sm:py-2.5 sm:px-3.5 rounded-2xl shadow-premium border border-warm-beige flex items-center gap-2 sm:gap-2.5 z-10">
+                    <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-xl bg-orange/15 text-orange flex items-center justify-center font-bold text-xs sm:text-sm shrink-0">
+                      ★
+                    </div>
+                    <div>
+                      <div className="text-[11px] sm:text-xs font-bold text-navy leading-none">4.9 / 5 Rating</div>
+                      <div className="text-[9px] sm:text-[10px] text-navy/60 mt-0.5">200+ Google Reviews</div>
+                    </div>
+                  </div>
+
                   {/* Floating Doctor Profile Card on Image */}
-                  <div className="absolute bottom-4 left-4 right-4 bg-navy-deep/90 backdrop-blur-md p-4 rounded-2xl border border-white/15 text-white shadow-premium">
-                    <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-full overflow-hidden bg-warm-cream border-2 border-orange shrink-0">
+                  <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 bg-navy-deep/95 backdrop-blur-md p-3 sm:p-4 rounded-2xl border border-white/15 text-white shadow-premium">
+                    <div className="flex items-center gap-2.5 sm:gap-3">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden bg-warm-cream border-2 border-orange shrink-0">
                         <img 
                           src="https://hyderabadsmiles.com/wp-content/uploads/2025/05/dr.-dilip-kumar.webp" 
                           alt="Dr. Dilip Kumar Kowkonda"
@@ -151,23 +162,12 @@ export default function Home({ onOpenBooking }) {
                           }}
                         />
                       </div>
-                      <div>
-                        <div className="text-xs font-bold text-white leading-tight">Dr. Dilip Kumar Kowkonda</div>
-                        <div className="text-[11px] text-orange">BDS, MDS (Oral & Maxillofacial Surgeon)</div>
-                        <div className="text-[10px] text-white/60">12+ Years Clinical & Surgical Experience</div>
+                      <div className="min-w-0 flex-1">
+                        <div className="text-xs sm:text-sm font-bold text-white truncate">Dr. Dilip Kumar Kowkonda</div>
+                        <div className="text-[10px] sm:text-[11px] text-orange truncate">BDS, MDS (Oral & Maxillofacial Surgeon)</div>
+                        <div className="text-[9px] sm:text-[10px] text-white/60 truncate">Chief Surgeon • 12+ Yrs Experience</div>
                       </div>
                     </div>
-                  </div>
-                </div>
-
-                {/* Floating Satisfaction Badge */}
-                <div className="absolute -top-4 -right-4 sm:-right-6 bg-white text-navy p-3.5 rounded-2xl shadow-premium border border-warm-beige flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-orange/15 text-orange flex items-center justify-center font-bold">
-                    ★
-                  </div>
-                  <div>
-                    <div className="text-xs font-bold">4.9 / 5 Rating</div>
-                    <div className="text-[10px] text-navy/60">200+ Google Reviews</div>
                   </div>
                 </div>
               </div>
@@ -250,7 +250,7 @@ export default function Home({ onOpenBooking }) {
                 <img
                   src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=900&q=80"
                   alt="Hyderabad Smiles Advanced Clinic Interior"
-                  className="w-full h-[440px] object-cover"
+                  className="w-full h-64 sm:h-80 lg:h-[440px] object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-transparent to-transparent"></div>
                 <div className="absolute bottom-6 left-6 right-6 text-white">
@@ -526,8 +526,8 @@ export default function Home({ onOpenBooking }) {
       {/* =========================================================================
           9. INTEGRATED APPOINTMENT BOOKING SECTION
       ========================================================================== */}
-      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="bg-navy rounded-4xl p-8 sm:p-12 lg:p-16 text-white relative overflow-hidden shadow-2xl">
+      <section className="py-14 sm:py-20 max-w-7xl mx-auto px-3 sm:px-6">
+        <div className="bg-navy rounded-3xl sm:rounded-4xl p-5 sm:p-10 lg:p-16 text-white relative overflow-hidden shadow-2xl">
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-5 text-center lg:text-left">
               <div className="text-xs uppercase tracking-wider text-orange font-bold mb-2">Direct Hospital Scheduling</div>

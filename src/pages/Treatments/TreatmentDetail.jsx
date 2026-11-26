@@ -69,27 +69,27 @@ export default function TreatmentDetail({ customSlug, onOpenBooking }) {
               </div>
 
               {/* CTAs */}
-              <div className="mt-8 flex flex-wrap gap-4">
+              <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <button
                   type="button"
                   onClick={onOpenBooking}
-                  className="px-8 py-3.5 btn-orange-gradient rounded-full font-bold text-sm shadow-premium hover:shadow-glow transition-all flex items-center gap-2"
+                  className="w-full sm:w-auto px-8 py-3.5 btn-orange-gradient rounded-full font-bold text-sm shadow-premium hover:shadow-glow transition-all flex items-center justify-center gap-2 cursor-pointer"
                 >
-                  <Calendar className="w-4 h-4" />
+                  <Calendar className="w-4 h-4 shrink-0" />
                   <span>Book Consultation for {treatment.shortTitle}</span>
                 </button>
                 <a
                   href={`tel:${siteData.phoneClean}`}
-                  className="px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold text-sm transition-colors flex items-center gap-2"
+                  className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold text-sm transition-colors flex items-center justify-center gap-2"
                 >
-                  <Phone className="w-4 h-4 text-orange" />
+                  <Phone className="w-4 h-4 text-orange shrink-0" />
                   <span>Call {siteData.phone}</span>
                 </a>
               </div>
             </div>
 
             {/* Right Hero Image */}
-            <div className="lg:col-span-5">
+            <div className="lg:col-span-5 mt-8 lg:mt-0">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20 aspect-[4/3] bg-navy-light/40">
                 <img
                   src={treatment.heroImage}

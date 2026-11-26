@@ -6,16 +6,33 @@
   html {
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     color: #10243E;
+    -webkit-tap-highlight-color: transparent;
+    overflow-x: hidden;
+  }
+
+  body {
+    overflow-x: hidden;
+    width: 100%;
   }
   
   h1, h2, h3, .font-serif {
     font-family: 'Playfair Display', Georgia, serif;
   }
+
+  /* Prevent iOS Safari from zooming in on input focus */
+  input, select, textarea {
+    font-size: 16px;
+  }
+  @media (min-width: 640px) {
+    input, select, textarea {
+      font-size: 0.875rem; /* 14px on desktop */
+    }
+  }
 }
 
 /* Custom styling for luxury dental healthcare aesthetic */
 .hero-gradient {
-  background: radial-gradient(circle at 80% 20%, rgba(22, 120, 165, 0.25) 0%, rgba(7, 59, 92, 0.95) 50%, #032C47 100%);
+  background: radial-gradient(circle at 80% 20%, rgba(22, 120, 165, 0.3) 0%, rgba(7, 59, 92, 0.98) 60%, #032C47 100%);
 }
 
 .card-luxury {
@@ -51,4 +68,9 @@
   background: linear-gradient(135deg, #FFA048 0%, #FF761B 50%, #F36B13 100%);
   box-shadow: 0 8px 24px rgba(243, 107, 19, 0.35);
   transform: translateY(-2px);
+}
+
+/* Safe area padding helper for modern smartphones */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0.75rem);
 }

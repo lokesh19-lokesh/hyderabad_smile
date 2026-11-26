@@ -11,7 +11,8 @@ import {
   ChevronDown, 
   Shield, 
   ArrowRight,
-  Sparkles
+  Sparkles,
+  MessageCircle
 } from 'lucide-react';
 import { siteData } from '../../data/siteData';
 
@@ -24,7 +25,7 @@ export default function Header({ onOpenBooking }) {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 30);
+      setIsScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -83,54 +84,62 @@ export default function Header({ onOpenBooking }) {
 
   return (
     <header className="sticky top-0 z-50 w-full transition-all duration-300">
-      {/* 1. SLIM TOP INFORMATION BAR */}
-      <div className="bg-navy-deep text-white/90 text-xs py-2 px-4 sm:px-6 border-b border-navy-light/30">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-2">
-          {/* Branches Navigation */}
-          <div className="flex items-center flex-wrap gap-2 sm:gap-4 text-[11px] sm:text-xs">
-            <span className="text-orange font-bold flex items-center gap-1">
-              <MapPin className="w-3.5 h-3.5" />
-              <span>Our Branches:</span>
+      {/* 1. SLIM TOP INFORMATION BAR (Responsive & Clean) */}
+      <div className="bg-navy-deep text-white/90 text-xs py-1.5 sm:py-2 px-3 sm:px-6 border-b border-navy-light/30">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-2">
+          {/* Branches Navigation with clean spacing */}
+          <div className="flex items-center gap-1.5 sm:gap-3 text-[10px] sm:text-xs overflow-x-auto scrollbar-none py-0.5">
+            <span className="text-orange font-bold flex items-center gap-1 shrink-0">
+              <MapPin className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+              <span className="hidden xs:inline">Our Branches:</span>
             </span>
-            <Link to="/jubilee-hills/" className="hover:text-orange transition-colors">Jubilee Hills</Link>
+            <Link to="/jubilee-hills/" className="hover:text-orange transition-colors shrink-0">Jubilee Hills</Link>
             <span className="text-white/30">•</span>
-            <Link to="/madhapur-location/" className="hover:text-orange transition-colors">Madhapur</Link>
+            <Link to="/madhapur-location/" className="hover:text-orange transition-colors shrink-0">Madhapur</Link>
             <span className="text-white/30">•</span>
-            <Link to="/punjagutta-location/" className="hover:text-orange transition-colors">Punjagutta</Link>
-            <span className="hidden lg:inline text-white/30">•</span>
-            <Link to="/international-patients/" className="hidden lg:flex items-center gap-1 text-orange/90 hover:text-orange font-semibold">
+            <Link to="/punjagutta-location/" className="hover:text-orange transition-colors shrink-0">Punjagutta</Link>
+            <span className="hidden md:inline text-white/30">•</span>
+            <Link to="/international-patients/" className="hidden md:flex items-center gap-1 text-orange/90 hover:text-orange font-semibold shrink-0">
               <Globe className="w-3 h-3" />
               <span>International Patients</span>
             </Link>
           </div>
 
-          {/* Timings and Emergency */}
-          <div className="hidden sm:flex items-center gap-4 text-[11px] sm:text-xs text-white/80">
+          {/* Timings and Emergency (Desktop / Tablet) */}
+          <div className="hidden md:flex items-center gap-4 text-xs text-white/80 shrink-0">
             <span className="flex items-center gap-1.5">
               <Clock className="w-3.5 h-3.5 text-orange" />
               <span>Mon-Sat: 9:00 AM – 10:00 PM | Sun: 10:00 AM – 2:00 PM</span>
             </span>
             <span className="text-white/30">•</span>
-            <span className="text-orange font-medium">ISO 9001:2008 Certified</span>
+            <span className="text-orange font-medium">ISO 9001:2008</span>
+          </div>
+
+          {/* Mobile phone direct link */}
+          <div className="md:hidden flex items-center gap-1 text-[11px] text-orange font-semibold shrink-0">
+            <Phone className="w-3 h-3" />
+            <a href={`tel:${siteData.phoneClean}`} className="hover:underline">
+              88016 27272
+            </a>
           </div>
         </div>
       </div>
 
       {/* 2. PRIMARY NAVIGATION BAR */}
-      <nav className={`bg-navy transition-all duration-300 ${isScrolled ? 'shadow-premium py-2.5' : 'py-3.5 sm:py-4'}`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 shrink-0 group">
+      <nav className={`bg-navy transition-all duration-300 ${isScrolled ? 'shadow-premium py-2 sm:py-2.5' : 'py-2.5 sm:py-3.5'}`}>
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 flex items-center justify-between gap-3">
+          {/* Logo with proper breathing room and truncate support */}
+          <Link to="/" className="flex items-center gap-2 sm:gap-3 shrink min-w-0 group">
             <img 
               src="/logo.png" 
               alt="Hyderabad Smiles Advanced Dental Hospitals" 
-              className="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              className="h-8 sm:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105 shrink-0"
             />
-            <div className="flex flex-col">
-              <span className="font-serif font-bold text-white text-base sm:text-lg tracking-tight leading-none">
+            <div className="flex flex-col min-w-0">
+              <span className="font-serif font-bold text-white text-sm sm:text-lg tracking-tight leading-none truncate">
                 Hyderabad Smiles
               </span>
-              <span className="text-[10px] sm:text-[11px] text-orange tracking-wider uppercase font-semibold mt-0.5">
+              <span className="text-[9px] sm:text-[11px] text-orange tracking-wider uppercase font-semibold mt-0.5 truncate">
                 Advanced Dental Hospitals
               </span>
             </div>
@@ -164,7 +173,7 @@ export default function Header({ onOpenBooking }) {
 
                   {/* Mega Menu / Dropdown */}
                   {hasDropdown && activeDropdown === item.label && (
-                    <div className="absolute top-full left-0 pt-2 w-72 lg:w-80 animate-fadeIn">
+                    <div className="absolute top-full left-0 pt-2 w-72 lg:w-80 animate-fadeIn z-50">
                       <div className="bg-white rounded-2xl shadow-2xl border border-warm-beige/80 p-3 overflow-hidden">
                         <div className="text-[11px] font-bold uppercase tracking-wider text-navy/40 px-3 py-1 mb-1">
                           {item.label} Overview
@@ -196,8 +205,8 @@ export default function Header({ onOpenBooking }) {
             })}
           </div>
 
-          {/* Action CTAs */}
-          <div className="hidden md:flex items-center gap-3">
+          {/* Desktop Action CTAs */}
+          <div className="hidden md:flex items-center gap-3 shrink-0">
             {/* Phone Call Button */}
             <a
               href={`tel:${siteData.phoneClean}`}
@@ -220,11 +229,11 @@ export default function Header({ onOpenBooking }) {
           </div>
 
           {/* Mobile Menu Trigger & Quick Actions */}
-          <div className="flex lg:hidden items-center gap-2">
+          <div className="flex lg:hidden items-center gap-2 shrink-0">
             <button
               type="button"
               onClick={onOpenBooking}
-              className="px-3 py-1.5 btn-orange-gradient rounded-full text-[11px] font-bold flex items-center gap-1.5 shadow"
+              className="px-3 py-1.5 btn-orange-gradient rounded-full text-xs font-bold flex items-center gap-1 shadow active:scale-95 transition-transform"
             >
               <Calendar className="w-3.5 h-3.5" />
               <span>Book</span>
@@ -233,10 +242,10 @@ export default function Header({ onOpenBooking }) {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-xl bg-white/10 text-white hover:bg-white/20 transition-colors focus:outline-none"
+              className="p-2 rounded-xl bg-white/10 text-white hover:bg-white/20 active:bg-white/30 transition-colors focus:outline-none flex items-center justify-center"
               aria-label="Toggle navigation menu"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
@@ -259,6 +268,7 @@ export default function Header({ onOpenBooking }) {
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 py-2.5 px-3 bg-[#25D366] text-white rounded-xl text-xs font-semibold"
               >
+                <MessageCircle className="w-3.5 h-3.5 fill-current" />
                 <span>WhatsApp</span>
               </a>
             </div>
@@ -282,7 +292,7 @@ export default function Header({ onOpenBooking }) {
                           <ChevronDown className={`w-4 h-4 text-white/50 transition-transform ${isExpanded ? 'rotate-180 text-orange' : ''}`} />
                         </button>
                         {isExpanded && (
-                          <div className="pl-4 py-2 space-y-2 bg-black/20 rounded-xl my-1">
+                          <div className="pl-3 py-2 space-y-1.5 bg-black/20 rounded-xl my-1">
                             {item.children.map((sub, sIdx) => (
                               <Link
                                 key={sIdx}

@@ -114,7 +114,7 @@ export default function AppointmentForm({ defaultBranch = '', defaultTreatment =
   }
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white p-6 sm:p-8 rounded-3xl border border-warm-beige/80 shadow-soft">
+    <form onSubmit={handleSubmit} className="bg-white p-4 sm:p-8 rounded-3xl border border-warm-beige/80 shadow-soft">
       {status === 'error' && (
         <div className="mb-6 p-4 bg-red-50 text-red-700 rounded-xl flex items-center gap-2 text-sm">
           <AlertCircle className="w-4 h-4 shrink-0" />
